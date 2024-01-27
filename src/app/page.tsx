@@ -108,23 +108,18 @@ export default function Home() {
             <Image priority src={Sunny} alt="" width={180} height={180} />
           </div>
         </div>
-        <div className="flex gap-5">
+        {/* <div className="flex gap-5">
           <div className="weather-cards bg-gray-600 w-[200px] px-10 py-40 rounded-md">
             q
           </div>
-          <div className="weather-cards bg-gray-600 w-[200px] px-10 py-40 rounded-md">
-            q
-          </div>
-          <div className="weather-cards bg-gray-600 w-[200px] px-10 py-40 rounded-md">
-            q
-          </div>
-          <div className="weather-cards bg-gray-600 w-[200px] px-10 py-40 rounded-md">
-            q
-          </div>
-          <div className="weather-cards bg-gray-600 w-[200px] px-10 py-40 rounded-md">
-            q
-          </div>
-        </div>
+        </div> */}
+        {Object.keys(weatherData).length !== 0 ? (
+          <>
+            <div className="weather-cards bg-gray-600 w-[200px] px-10 py-40 rounded-md">
+              {}
+            </div>
+          </>
+        ) : null}
       </div>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left"></div>
     </main>
