@@ -6,7 +6,8 @@ import Sunny from "@/assets/weather-icons/wi-day-sunny.svg";
 import Location from "@/assets/weather-icons/location.svg";
 
 const API_KEY = "8jwnkHfy7YZE3LTNoggEtyOMkolz9NrO";
-//set cities
+//CITIES
+
 //new york
 // http://dataservice.accuweather.com/forecasts/v1/daily/5day/379727/?apikey=8jwnkHfy7YZE3LTNoggEtyOMkolz9NrO
 
@@ -20,6 +21,8 @@ const API_KEY = "8jwnkHfy7YZE3LTNoggEtyOMkolz9NrO";
 export default function Home() {
   const [cityInput, setCityInput] = useState("");
 
+  const [weatherData, setWeatherData] = useState<any>({});
+
   async function getNewYorkData() {
     console.log("ny");
     try {
@@ -29,6 +32,9 @@ export default function Home() {
           API_KEY
       );
       const data = await serverRes.json();
+      console.log(data);
+      if (data?.cod === "400") throw data;
+      setWeatherData(data);
     } catch (error) {}
   }
   async function getAkersbergaData() {
@@ -40,6 +46,9 @@ export default function Home() {
           API_KEY
       );
       const data = await serverRes.json();
+      console.log(data);
+      if (data?.cod === "400") throw data;
+      setWeatherData(data);
     } catch (error) {}
   }
   async function getSwedenData() {
@@ -51,6 +60,9 @@ export default function Home() {
           API_KEY
       );
       const data = await serverRes.json();
+      console.log(data);
+      if (data?.cod === "400") throw data;
+      setWeatherData(data);
     } catch (error) {}
   }
 
